@@ -42,7 +42,33 @@
 
         .snap-slide {
             scroll-snap-align: start;
-            height: 100vh;
+            min-height: 100vh;
+        }
+
+        /* Liquid Glass Effects */
+        .glass-panel {
+            background: rgba(8, 14, 20, 0.55);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .glass-panel-hover {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glass-panel-hover:hover {
+            background: rgba(14, 24, 34, 0.75);
+            border-color: rgba(0, 255, 157, 0.4);
+            box-shadow: 0 12px 40px 0 rgba(0, 255, 157, 0.15);
+        }
+
+        .glass-pill {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         /* Custom scrollbar styling */
@@ -65,66 +91,66 @@
     class="bg-[#020408] text-slate-100 font-sans antialiased overflow-hidden selection:bg-[#00ff9d] selection:text-black">
 
     <!-- Interactive Cellular Network Background Canvas -->
-    <canvas id="cellular-canvas" class="fixed top-0 left-0 w-full h-full pointer-events-none z-0 opacity-30"></canvas>
+    <canvas id="cellular-canvas" class="fixed top-0 left-0 w-full h-full pointer-events-none z-0 opacity-25"></canvas>
 
     <!-- Main Presentation Container -->
     <main class="snap-container relative z-10">
 
         <!-- SLIDE 1: Hero -->
-        <section class="snap-slide flex flex-col justify-between p-8 md:p-16 relative border-b border-emerald-950/60">
+        <section class="snap-slide flex flex-col justify-between p-6 md:p-12 lg:p-16 relative border-b border-white/5 h-screen overflow-y-auto">
             <nav class="flex justify-between items-center w-full">
-                <div class="text-[#00ff9d] font-mono font-bold tracking-widest text-sm flex items-center gap-2">
+                <div class="glass-pill px-4 py-2 rounded-full text-[#00ff9d] font-mono font-bold tracking-widest text-xs sm:text-sm flex items-center gap-2">
                     <i data-lucide="activity" class="w-4 h-4 animate-pulse"></i> BME.AI_INTERFACE
                 </div>
-                <div class="flex gap-4 text-xs font-mono text-slate-400">
-                    <span>University of Science and Technology of Southern Philippines - Alubijid</span>
-                    <span>•</span>
-                    <span class="text-[#00ff9d]">STATUS: ONLINE</span>
+                <div class="flex gap-4 text-xs font-mono text-slate-400 items-center">
+                    <span class="glass-pill px-3 py-1.5 rounded-full text-[#00ff9d] flex items-center gap-1.5">
+                        <span class="w-2 h-2 rounded-full bg-[#00ff9d] animate-ping"></span>
+                        STATUS: ONLINE
+                    </span>
                 </div>
             </nav>
 
-            <div class="max-w-4xl my-auto space-y-6">
+            <div class="max-w-4xl my-auto space-y-6 py-8">
                 <div
-                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/40 border border-[#00ff9d]/30 text-[#00ff9d] text-xs font-mono">
-                    <span class="w-2 h-2 rounded-full bg-[#00ff9d] animate-ping"></span>
+                    class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-pill text-[#00ff9d] text-xs font-mono tracking-wide">
                     Biomedical Engineer & AI/ML Engineer
                 </div>
-                <h1 class="font-heading text-5xl md:text-7xl font-extrabold tracking-tight text-white">
+                <h1 class="font-heading text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white leading-none">
                     Joseph Noel <br />
                     <span
-                        class="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-[#00ff9d]">
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-[#00ff9d]">
                         Baguio Imasa
                     </span>
                 </h1>
-                <p class="text-slate-400 text-lg md:text-xl max-w-2xl font-light leading-relaxed">
+                <p class="text-slate-300 text-base sm:text-lg md:text-xl max-w-2xl font-light leading-relaxed">
                     Engineering at the intersection of <span class="text-white font-medium">neuroscience & rehabilitation robotics</span>, 
                     <span class="text-white font-medium">microbiology & phage therapeutics</span>, and <span class="text-white font-medium">production-grade AI/ML architecture</span>.
                 </p>
-                <div class="flex flex-wrap gap-4 pt-4">
+                <div class="flex flex-wrap gap-3 sm:gap-4 pt-2">
                     <a href="https://github.com/yor-meow" target="_blank"
-                        class="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-emerald-950/30 border border-[#00ff9d]/40 text-[#00ff9d] hover:bg-[#00ff9d]/10 transition">
+                        class="glass-pill flex items-center gap-2.5 px-5 py-3 rounded-2xl text-[#00ff9d] hover:border-[#00ff9d]/50 hover:bg-[#00ff9d]/10 transition duration-300 text-xs sm:text-sm font-mono">
                         <i data-lucide="github" class="w-4 h-4"></i> GitHub
                     </a>
                     <a href="https://www.linkedin.com/in/joseph-imasa/" target="_blank"
-                        class="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-emerald-950/30 border border-[#00ff9d]/40 text-[#00ff9d] hover:bg-[#00ff9d]/10 transition">
+                        class="glass-pill flex items-center gap-2.5 px-5 py-3 rounded-2xl text-[#00ff9d] hover:border-[#00ff9d]/50 hover:bg-[#00ff9d]/10 transition duration-300 text-xs sm:text-sm font-mono">
                         <i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn
                     </a>
                     <a href="mailto:joseph21imasa@gmail.com"
-                        class="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-black border border-slate-800 text-slate-200 hover:border-slate-600 transition">
+                        class="glass-pill flex items-center gap-2.5 px-5 py-3 rounded-2xl text-slate-200 hover:border-slate-400 transition duration-300 text-xs sm:text-sm font-mono">
                         <i data-lucide="mail" class="w-4 h-4"></i> Contact
                     </a>
                 </div>
             </div>
 
-            <div class="flex items-center justify-between text-xs font-mono text-slate-500">
-                <span class="flex items-center gap-1"><i data-lucide="chevron-down" class="w-4 h-4 animate-bounce"></i>
+            <div class="flex items-center justify-between text-xs font-mono text-slate-500 pt-4">
+                <span class="flex items-center gap-1.5"><i data-lucide="chevron-down" class="w-4 h-4 animate-bounce text-[#00ff9d]"></i>
                     Scroll down to explore research</span>
                 <span>SLIDE 01 // 05</span>
             </div>
         </section>
 
         <!-- SLIDE 2 -->
-        <section class="snap-slide flex flex-col justify-between p-8 md:p-16 relative border-b border-emerald-950/60 bg-black/60 backdrop-blur-sm">
+        <section class="snap-slide flex flex-col justify-between p-6 md:p-12 lg:p-16 relative border-b border-white/5 h-screen overflow-y-auto">
             <div class="flex justify-between items-center w-full">
                 <h2 class="text-xs font-mono tracking-widest text-[#00ff9d] flex items-center gap-2">
                     <i data-lucide="cpu" class="w-4 h-4"></i> CORE_DOMAINS
@@ -132,63 +158,69 @@
                 <span class="text-xs font-mono text-slate-500">SLIDE 02 // 05</span>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6 my-auto py-6">
                 <!-- Card 1: AI/ML Engineering -->
-                <div class="p-6 rounded-xl bg-black/80 border border-slate-800 hover:border-[#00ff9d]/60 transition group">
-                    <div class="w-12 h-12 rounded-lg bg-emerald-950/40 border border-emerald-900/60 flex items-center justify-center text-[#00ff9d] mb-4 group-hover:scale-110 transition">
-                        <i data-lucide="brain-circuit" class="w-6 h-6"></i>
+                <div class="glass-panel glass-panel-hover p-6 sm:p-7 rounded-3xl flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-[#00ff9d] mb-5">
+                            <i data-lucide="brain-circuit" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-heading text-lg sm:text-xl font-bold text-white mb-2.5">AI / ML Engineering</h3>
+                        <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-6">
+                            Building specialized RAG systems, localized clinical LLMs, and multi-modal ML pipelines optimized for low-latency, training AI and edge deployments.
+                        </p>
                     </div>
-                    <h3 class="font-heading text-xl font-bold text-white mb-2">AI / ML Engineering</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                        Building specialized RAG systems, localized clinical LLMs, and multi-modal ML pipelines optimized for low-latency, training AI and edge deployments.
-                    </p>
                     <div class="flex flex-wrap gap-2 font-mono text-[10px] text-slate-300">
-                        <span class="px-2 py-1 bg-slate-900 rounded border border-slate-800">Python/PyTorch</span>
-                        <span class="px-2 py-1 bg-slate-900 rounded border border-slate-800">RAG & RAG pipelines</span>
-                        <span class="px-2 py-1 bg-slate-900 rounded border border-slate-800">Medical LLMs</span>
+                        <span class="px-2.5 py-1 glass-pill rounded-lg">Python/PyTorch</span>
+                        <span class="px-2.5 py-1 glass-pill rounded-lg">RAG & RAG pipelines</span>
+                        <span class="px-2.5 py-1 glass-pill rounded-lg">Medical LLMs</span>
                     </div>
                 </div>
 
                 <!-- Card 2: Neuroscience & Rehab Robotics -->
-                <div class="p-6 rounded-xl bg-black/80 border border-slate-800 hover:border-[#00ff9d]/60 transition group">
-                    <div class="w-12 h-12 rounded-lg bg-emerald-950/40 border border-emerald-900/60 flex items-center justify-center text-[#00ff9d] mb-4 group-hover:scale-110 transition">
-                        <i data-lucide="bot" class="w-6 h-6"></i>
+                <div class="glass-panel glass-panel-hover p-6 sm:p-7 rounded-3xl flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-[#00ff9d] mb-5">
+                            <i data-lucide="bot" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-heading text-lg sm:text-xl font-bold text-white mb-2.5">Neuroscience & Robotics</h3>
+                        <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-6">
+                            Integrating bio-potential EMG processing, multi-stage signal conditioning, neural spikes simulation for advanced AI learning, and haptic exo-glove feedback for stroke rehabilitation.
+                        </p>
                     </div>
-                    <h3 class="font-heading text-xl font-bold text-white mb-2">Neuroscience & Robotics</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                        Integrating bio-potential EMG processing, multi-stage signal conditioning, neural spikes simulation for advanced AI learning, and haptic exo-glove feedback for stroke rehabilitation.
-                    </p>
                     <div class="flex flex-wrap gap-2 font-mono text-[10px] text-slate-300">
-                        <span class="px-2 py-1 bg-slate-900 rounded border border-slate-800">EMG/Bio-Signals</span>
-                        <span class="px-2 py-1 bg-slate-900 rounded border border-slate-800">Sensors/FSR</span>
-                        <span class="px-2 py-1 bg-slate-900 rounded border border-slate-800">Exo-Gloves</span>
+                        <span class="px-2.5 py-1 glass-pill rounded-lg">EMG/Bio-Signals</span>
+                        <span class="px-2.5 py-1 glass-pill rounded-lg">Sensors/FSR</span>
+                        <span class="px-2.5 py-1 glass-pill rounded-lg">Exo-Gloves</span>
                     </div>
                 </div>
 
                 <!-- Card 3: Microbiology & Phage Therapeutics -->
-                <div class="p-6 rounded-xl bg-black/80 border border-slate-800 hover:border-[#00ff9d]/60 transition group">
-                    <div class="w-12 h-12 rounded-lg bg-emerald-950/40 border border-emerald-900/60 flex items-center justify-center text-[#00ff9d] mb-4 group-hover:scale-110 transition">
-                        <i data-lucide="dna" class="w-6 h-6"></i>
+                <div class="glass-panel glass-panel-hover p-6 sm:p-7 rounded-3xl flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-[#00ff9d] mb-5">
+                            <i data-lucide="dna" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-heading text-lg sm:text-xl font-bold text-white mb-2.5">Microbiology & Phage Therapy</h3>
+                        <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-6">
+                            Analyzing precision bacteriophage mechanisms, lytic cycles, and bio-engineering targeted alternatives to conventional antibiotics.
+                        </p>
                     </div>
-                    <h3 class="font-heading text-xl font-bold text-white mb-2">Microbiology & Phage Therapy</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                        Analyzing precision bacteriophage mechanisms, lytic cycles, and bio-engineering targeted alternatives to conventional antibiotics.
-                    </p>
                     <div class="flex flex-wrap gap-2 font-mono text-[10px] text-slate-300">
-                        <span class="px-2 py-1 bg-slate-900 rounded border border-slate-800">Microbiology</span>
-                        <span class="px-2 py-1 bg-slate-900 rounded border border-slate-800">Phage Therapy</span>
-                        <span class="px-2 py-1 bg-slate-900 rounded border border-slate-800">Genetics</span>
+                        <span class="px-2.5 py-1 glass-pill rounded-lg">Microbiology</span>
+                        <span class="px-2.5 py-1 glass-pill rounded-lg">Phage Therapy</span>
+                        <span class="px-2.5 py-1 glass-pill rounded-lg">Genetics</span>
                     </div>
                 </div>
             </div>
 
-            <div class="text-xs font-mono text-slate-500">
+            <div class="text-xs font-mono text-slate-500 pt-2">
                 PAGE 02 // MULTIDISCIPLINARY ENGINEERING & RESEARCH
             </div>
         </section>
 
         <!-- SLIDE 3 -->
-        <section class="snap-slide flex flex-col justify-between p-8 md:p-16 relative border-b border-emerald-950/60">
+        <section class="snap-slide flex flex-col justify-between p-6 md:p-12 lg:p-16 relative border-b border-white/5 h-screen overflow-y-auto">
             <div class="flex justify-between items-center w-full">
                 <h2 class="text-xs font-mono tracking-widest text-[#00ff9d] flex items-center gap-2">
                     <i data-lucide="folder-git-2" class="w-4 h-4"></i> FEATURED_RESEARCH_I
@@ -196,36 +228,36 @@
                 <span class="text-xs font-mono text-slate-500">SLIDE 03 // 05</span>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 my-auto items-center">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 my-auto py-6 items-center">
                 <!-- Project Description & Metadata (5 Cols) -->
                 <div class="lg:col-span-5 space-y-4">
                     <div class="flex flex-wrap gap-2 items-center">
                         <span
-                            class="text-[10px] font-mono text-[#00ff9d] bg-emerald-950/40 px-2.5 py-1 rounded border border-[#00ff9d]/30">
+                            class="text-[10px] font-mono text-[#00ff9d] glass-pill px-3 py-1 rounded-full">
                             LAMBIGIT 2026 Summit Exhibit
                         </span>
                         <span
-                            class="text-[10px] font-mono text-slate-200 bg-slate-900 px-2.5 py-1 rounded border border-slate-700">
+                            class="text-[10px] font-mono text-slate-300 glass-pill px-3 py-1 rounded-full">
                             Mindanao Daily News Publication
                         </span>
                     </div>
 
-                    <h3 class="font-heading text-2xl md:text-3xl font-bold text-white leading-tight">
+                    <h3 class="font-heading text-xl sm:text-2xl md:text-3xl font-bold text-white leading-tight">
                         Clinical Research Engine (CRE)
                     </h3>
 
-                    <p class="text-slate-300 text-xs md:text-sm leading-relaxed">
+                    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
                         An offline biomedical intelligence platform built for privacy-compliant data processing, medical
                         literature RAG indexing, and generative 3D biomedical mesh design. Tested and validated for
                         deployment in infrastructure-constrained clinical environments.
                     </p>
 
-                    <div class="p-3 bg-black border border-slate-800 rounded-lg space-y-2 text-xs font-mono">
-                        <div class="flex items-center gap-2 text-slate-300">
+                    <div class="p-4 glass-panel rounded-2xl space-y-2.5 text-xs font-mono">
+                        <div class="flex items-center gap-2.5 text-slate-200">
                             <i data-lucide="award" class="w-4 h-4 text-[#00ff9d]"></i>
-                            <span>Exhibited at <strong>Inno Hub 2026</strong> (USTP & DOST)</span>
+                            <span>Exhibited at <strong>Inno Hub 2026</strong></span>
                         </div>
-                        <div class="flex items-center gap-2 text-slate-300">
+                        <div class="flex items-center gap-2.5 text-slate-200">
                             <i data-lucide="newspaper" class="w-4 h-4 text-slate-400"></i>
                             <span>Featured in <strong>Mindanao Daily News Journal</strong></span>
                         </div>
@@ -237,14 +269,14 @@
                 </div>
 
                 <!-- Interactive Photo & Media Gallery (7 Cols) -->
-                <div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
 
                     <!-- Media Box 1: LAMBIGIT Summit Exhibit -->
                     <div
-                        class="relative group rounded-xl overflow-hidden border border-slate-800 bg-black aspect-video flex flex-col justify-end p-4 hover:border-[#00ff9d]/50 transition">
+                        class="glass-panel glass-panel-hover relative group rounded-2xl overflow-hidden aspect-video flex flex-col justify-end p-4">
                         <img src="images/cre_lambigit_exhibit.jpg" alt="LAMBIGIT 2026 Exhibit"
-                            class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-60 group-hover:opacity-85">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent">
+                            class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-55 group-hover:opacity-80">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#020408] via-[#020408]/40 to-transparent">
                         </div>
 
                         <div class="relative z-10 space-y-2">
@@ -253,7 +285,7 @@
                             </span>
                             <h4 class="font-heading text-xs font-bold text-white">LAMBIGIT 2026 Innovation Summit</h4>
                             <a href="https://www.facebook.com/share/p/19CUJj24NW/" target="_blank"
-                                class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-[#00ff9d] text-black font-semibold text-[10px] hover:bg-[#00df89] transition">
+                                class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#00ff9d] text-black font-semibold text-[10px] hover:bg-[#00df89] transition">
                                 View Exhibit Post <i data-lucide="external-link" class="w-3 h-3"></i>
                             </a>
                         </div>
@@ -261,10 +293,10 @@
 
                     <!-- Media Box 2: Mindanao Daily News Journal Posting -->
                     <div
-                        class="relative group rounded-xl overflow-hidden border border-slate-800 bg-black aspect-video flex flex-col justify-end p-4 hover:border-[#00ff9d]/50 transition">
+                        class="glass-panel glass-panel-hover relative group rounded-2xl overflow-hidden aspect-video flex flex-col justify-end p-4">
                         <img src="images/cre_mindanao_daily.jpg" alt="Mindanao Daily News Coverage"
-                            class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-60 group-hover:opacity-85">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent">
+                            class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-55 group-hover:opacity-80">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#020408] via-[#020408]/40 to-transparent">
                         </div>
 
                         <div class="relative z-10 space-y-2">
@@ -274,7 +306,7 @@
                             </span>
                             <h4 class="font-heading text-xs font-bold text-white">Mindanao Daily News Feature</h4>
                             <a href="https://www.facebook.com/share/18JBY8reK9/" target="_blank"
-                                class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-white text-black font-semibold text-[10px] hover:bg-slate-200 transition">
+                                class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white text-black font-semibold text-[10px] hover:bg-slate-200 transition">
                                 Read Journal Article <i data-lucide="external-link" class="w-3 h-3"></i>
                             </a>
                         </div>
@@ -284,15 +316,15 @@
             </div>
 
             <div
-                class="text-xs font-mono text-slate-500 flex justify-between items-center w-full border-t border-slate-900 pt-3">
+                class="text-xs font-mono text-slate-500 flex justify-between items-center w-full border-t border-white/5 pt-3">
                 <span>BIOMEDICAL AI & LOCALIZED CLINICAL LLM</span>
-                <span class="text-[#00ff9d]">INNO HUB EXHIBIT & REGIONAL PRESS RECOGNITION</span>
+                <span class="text-[#00ff9d] hidden sm:inline">INNO HUB EXHIBIT & REGIONAL PRESS RECOGNITION</span>
             </div>
         </section>
 
         <!-- SLIDE 4 -->
         <section
-            class="snap-slide flex flex-col justify-between p-8 md:p-16 relative border-b border-emerald-950/60 bg-black/40">
+            class="snap-slide flex flex-col justify-between p-6 md:p-12 lg:p-16 relative border-b border-white/5 h-screen overflow-y-auto">
             <div class="flex justify-between items-center w-full">
                 <h2 class="text-xs font-mono tracking-widest text-[#00ff9d] flex items-center gap-2">
                     <i data-lucide="microscope" class="w-4 h-4"></i> HARDWARE_&_BIO_RESEARCH
@@ -300,90 +332,89 @@
                 <span class="text-xs font-mono text-slate-500">SLIDE 04 // 05</span>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 my-auto">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 my-auto py-6">
                 <!-- EMG Acquisition -->
                 <div
-                    class="rounded-xl border border-slate-800 bg-black/80 hover:border-[#00ff9d]/50 transition overflow-hidden flex flex-col justify-between p-5">
+                    class="glass-panel glass-panel-hover rounded-3xl flex flex-col justify-between p-5 sm:p-6">
                     <div>
                         <span
-                            class="px-2 py-0.5 rounded bg-emerald-950/40 text-[10px] font-mono text-[#00ff9d] border border-[#00ff9d]/30">
+                            class="px-2.5 py-1 rounded-full glass-pill text-[10px] font-mono text-[#00ff9d]">
                             EMG System
                         </span>
-                        <h4 class="font-heading font-bold text-white text-base mt-3 mb-1">Three-Stage EMG Acquisition
+                        <h4 class="font-heading font-bold text-white text-sm sm:text-base mt-4 mb-2">Three-Stage EMG Acquisition
                         </h4>
-                        <p class="text-slate-400 text-xs leading-relaxed">Multi-stage bio-potential amplification with
+                        <p class="text-slate-300 text-xs leading-relaxed">Multi-stage bio-potential amplification with
                             nRF52840 wireless transmission for prosthetic control.</p>
                     </div>
                     <a href="pdf/EMG_Acquisition_System.pdf" target="_blank"
-                        class="mt-4 inline-flex items-center gap-1.5 text-xs font-mono text-[#00ff9d] hover:text-[#00df89] transition">
+                        class="mt-5 inline-flex items-center gap-1.5 text-xs font-mono text-[#00ff9d] hover:text-[#00df89] transition">
                         View Technical PDF <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
                     </a>
                 </div>
 
                 <!-- Force Measurement Rehab -->
                 <div
-                    class="rounded-xl border border-slate-800 bg-black/80 hover:border-[#00ff9d]/50 transition overflow-hidden flex flex-col justify-between p-5">
+                    class="glass-panel glass-panel-hover rounded-3xl flex flex-col justify-between p-5 sm:p-6">
                     <div>
                         <span
-                            class="px-2 py-0.5 rounded bg-slate-900 text-[10px] font-mono text-slate-200 border border-slate-700">
+                            class="px-2.5 py-1 rounded-full glass-pill text-[10px] font-mono text-slate-200">
                             Stroke Rehab
                         </span>
-                        <h4 class="font-heading font-bold text-white text-base mt-3 mb-1">Force Measurement Monitor</h4>
-                        <p class="text-slate-400 text-xs leading-relaxed">Dual Force Sensitive Resistors (FSRs) with
+                        <h4 class="font-heading font-bold text-white text-sm sm:text-base mt-4 mb-2">Force Measurement Monitor</h4>
+                        <p class="text-slate-300 text-xs leading-relaxed">Dual Force Sensitive Resistors (FSRs) with
                             Python logging for stroke rehabilitation exo-gloves.</p>
                     </div>
                     <a href="pdf/Force_Measurement_System.pdf" target="_blank"
-                        class="mt-4 inline-flex items-center gap-1.5 text-xs font-mono text-white hover:text-slate-300 transition">
+                        class="mt-5 inline-flex items-center gap-1.5 text-xs font-mono text-white hover:text-slate-300 transition">
                         View Technical PDF <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
                     </a>
                 </div>
 
                 <!-- PPG Arrhythmia -->
                 <div
-                    class="rounded-xl border border-slate-800 bg-black/80 hover:border-[#00ff9d]/50 transition overflow-hidden flex flex-col justify-between p-5">
+                    class="glass-panel glass-panel-hover rounded-3xl flex flex-col justify-between p-5 sm:p-6">
                     <div>
                         <span
-                            class="px-2 py-0.5 rounded bg-emerald-950/40 text-[10px] font-mono text-[#00ff9d] border border-[#00ff9d]/30">
+                            class="px-2.5 py-1 rounded-full glass-pill text-[10px] font-mono text-[#00ff9d]">
                             PPG System
                         </span>
-                        <h4 class="font-heading font-bold text-white text-base mt-3 mb-1">PPG Arrhythmia Detector</h4>
-                        <p class="text-slate-400 text-xs leading-relaxed">Photoplethysmography prototype utilizing
-                            hardware noise cancellation for cardiac monitoring. De La Salle University Teknolunas '25
-                            Finalist.</p>
+                        <h4 class="font-heading font-bold text-white text-sm sm:text-base mt-4 mb-2">PPG Arrhythmia Detector</h4>
+                        <p class="text-slate-300 text-xs leading-relaxed">Photoplethysmography prototype utilizing
+                            hardware noise cancellation for cardiac monitoring. DLSU Teknolunas '25 Finalist.</p>
                     </div>
                     <a href="pdf/PPG_Arrhythmia_Detector.pdf" target="_blank"
-                        class="mt-4 inline-flex items-center gap-1.5 text-xs font-mono text-[#00ff9d] hover:text-[#00df89] transition">
+                        class="mt-5 inline-flex items-center gap-1.5 text-xs font-mono text-[#00ff9d] hover:text-[#00df89] transition">
                         View Technical PDF <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
                     </a>
                 </div>
 
                 <!-- Bacteriophage Therapy Analysis -->
                 <div
-                    class="rounded-xl border border-slate-800 bg-black/80 hover:border-[#00ff9d]/50 transition overflow-hidden flex flex-col justify-between p-5">
+                    class="glass-panel glass-panel-hover rounded-3xl flex flex-col justify-between p-5 sm:p-6">
                     <div>
                         <span
-                            class="px-2 py-0.5 rounded bg-slate-900 text-[10px] font-mono text-slate-200 border border-slate-700">
+                            class="px-2.5 py-1 rounded-full glass-pill text-[10px] font-mono text-slate-200">
                             Literature Study
                         </span>
-                        <h4 class="font-heading font-bold text-white text-base mt-3 mb-1">Bacteriophage Therapy Analysis
+                        <h4 class="font-heading font-bold text-white text-sm sm:text-base mt-4 mb-2">Bacteriophage Therapy Analysis
                         </h4>
-                        <p class="text-slate-400 text-xs leading-relaxed">In-depth study on precision phage mechanisms,
+                        <p class="text-slate-300 text-xs leading-relaxed">In-depth study on precision phage mechanisms,
                             lytic cycles, and genetic modifications as antibiotic alternatives.</p>
                     </div>
                     <a href="pdf/Bacteriophage_Therapy_Analysis.pdf" target="_blank"
-                        class="mt-4 inline-flex items-center gap-1.5 text-xs font-mono text-white hover:text-slate-300 transition">
+                        class="mt-5 inline-flex items-center gap-1.5 text-xs font-mono text-white hover:text-slate-300 transition">
                         Read Research PDF <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
                     </a>
                 </div>
             </div>
 
-            <div class="text-xs font-mono text-slate-500">
+            <div class="text-xs font-mono text-slate-500 pt-2">
                 PROTOTYPES, SCHEMATICS & PUBLISHED LITERATURE
             </div>
         </section>
 
         <!-- SLIDE 5 -->
-        <section class="snap-slide flex flex-col justify-between p-8 md:p-16 relative">
+        <section class="snap-slide flex flex-col justify-between p-6 md:p-12 lg:p-16 relative h-screen overflow-y-auto">
             <div class="flex justify-between items-center w-full">
                 <h2 class="text-xs font-mono tracking-widest text-[#00ff9d] flex items-center gap-2">
                     <i data-lucide="award" class="w-4 h-4"></i> TIMELINE_INCUBATION_&_ACCOLADES
@@ -391,18 +422,17 @@
                 <span class="text-xs font-mono text-slate-500">SLIDE 05 // 05</span>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 my-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 my-auto py-6">
                 <!-- Timeline Column -->
                 <div class="space-y-4">
-                    <h3 class="font-heading text-lg font-bold text-white flex items-center gap-2">
+                    <h3 class="font-heading text-base sm:text-lg font-bold text-white flex items-center gap-2">
                         <i data-lucide="graduation-cap" class="w-4 h-4 text-[#00ff9d]"></i> Education & Track
                     </h3>
-                    <div class="border-l-2 border-emerald-950 pl-4 space-y-3 text-xs font-mono">
+                    <div class="border-l-2 border-[#00ff9d]/30 pl-4 space-y-4 text-xs font-mono">
                         <div>
                             <span class="text-[#00ff9d]">2024 - Expected 2028</span>
                             <h4 class="font-heading text-sm font-bold text-white">BS Biomedical Engineering</h4>
-                            <p class="text-slate-400">University of Science and Technology of Southern Philippines —
-                                Alubijid (State Scholar)</p>
+                            <p class="text-slate-400">Undergraduate Degree Program (State Scholar)</p>
                         </div>
                         <div>
                             <span class="text-slate-500">2022 - 2023</span>
@@ -426,52 +456,47 @@
 
                 <!-- Pitching & Competition Wins -->
                 <div class="space-y-4">
-                    <h3 class="font-heading text-lg font-bold text-white flex items-center gap-2">
+                    <h3 class="font-heading text-base sm:text-lg font-bold text-white flex items-center gap-2">
                         <i data-lucide="trophy" class="w-4 h-4 text-[#00ff9d]"></i> Startup Incubations & Pitch Wins
                     </h3>
-                    <div class="space-y-2">
+                    <div class="space-y-2.5">
                         <!-- Top 1 CET Incubation -->
                         <div
-                            class="p-2.5 rounded bg-black border border-[#00ff9d]/40 flex items-center justify-between">
+                            class="p-3 glass-panel rounded-2xl flex items-center justify-between">
                             <div>
                                 <div class="flex items-center gap-2">
-                                    <h5 class="font-heading text-xs font-bold text-white">2026 USTP CET Incubation
-                                        Program</h5>
+                                    <h5 class="font-heading text-xs font-bold text-white">2026 USTP CET Incubation Program</h5>
                                     <a href="https://www.facebook.com/share/p/17hvZTkdK7/" target="_blank"
                                         class="text-[#00ff9d] hover:text-[#00df89]"><i data-lucide="external-link"
                                             class="w-3 h-3"></i></a>
                                 </div>
-                                <p class="text-[10px] text-slate-400">Top 1 Incubatee (out of 22 teams) • ₱100,000 Grant
-                                    (Co-Pitcher)</p>
+                                <p class="text-[10px] text-slate-400">Top 1 Incubatee (out of 22 teams) • ₱100,000 Grant (Co-Pitcher)</p>
                             </div>
                             <span
-                                class="text-[10px] font-mono text-[#00ff9d] font-bold bg-emerald-950/60 px-2 py-0.5 rounded border border-[#00ff9d]/30">Top
-                                1</span>
+                                class="text-[10px] font-mono text-[#00ff9d] font-bold glass-pill px-2.5 py-1 rounded-full">Top 1</span>
                         </div>
 
                         <!-- GDG Solution Challenge / FindLab -->
                         <div
-                            class="p-2.5 rounded bg-black border border-slate-800 flex items-center justify-between">
+                            class="p-3 glass-panel rounded-2xl flex items-center justify-between">
                             <div>
                                 <div class="flex items-center gap-2">
-                                    <h5 class="font-heading text-xs font-bold text-white">INNOVATE 2026 Google Developer
-                                        Groups</h5>
+                                    <h5 class="font-heading text-xs font-bold text-white">INNOVATE 2026 Google Developer Groups</h5>
                                     <a href="https://www.facebook.com/share/1QePy4Xhok/" target="_blank"
                                         class="text-[#00ff9d] hover:text-[#00df89]"><i data-lucide="external-link"
                                             class="w-3 h-3"></i></a>
                                 </div>
                                 <p class="text-[10px] text-slate-400">FindLab Solution Pitching • Lead Pitcher</p>
                             </div>
-                            <span class="text-xs font-mono text-slate-200 font-bold">1st Runner Up</span>
+                            <span class="text-xs font-mono text-slate-300 font-bold">1st Runner Up</span>
                         </div>
 
                         <!-- JOGET Infinity Hack -->
                         <div
-                            class="p-2.5 rounded bg-black border border-[#00ff9d]/40 flex items-center justify-between">
+                            class="p-3 glass-panel rounded-2xl flex items-center justify-between">
                             <div>
                                 <div class="flex items-center gap-2">
-                                    <h5 class="font-heading text-xs font-bold text-white">JOGET x USTP Infinity Hack
-                                        2025</h5>
+                                    <h5 class="font-heading text-xs font-bold text-white">JOGET x USTP Infinity Hack 2025</h5>
                                     <a href="https://www.facebook.com/share/p/1PvBHx3cR4/" target="_blank"
                                         class="text-[#00ff9d] hover:text-[#00df89]"><i data-lucide="external-link"
                                             class="w-3 h-3"></i></a>
@@ -479,12 +504,12 @@
                                 <p class="text-[10px] text-slate-400">Pitching & Demo Day • Lead Pitcher</p>
                             </div>
                             <span
-                                class="text-[10px] font-mono text-[#00ff9d] font-bold bg-emerald-950/60 px-2 py-0.5 rounded border border-[#00ff9d]/30">Champion</span>
+                                class="text-[10px] font-mono text-[#00ff9d] font-bold glass-pill px-2.5 py-1 rounded-full">Champion</span>
                         </div>
 
                         <!-- JIECEP Summit -->
                         <div
-                            class="p-2.5 rounded bg-black border border-slate-800 flex items-center justify-between">
+                            class="p-3 glass-panel rounded-2xl flex items-center justify-between">
                             <div>
                                 <div class="flex items-center gap-2">
                                     <h5 class="font-heading text-xs font-bold text-white">JIECEP Summit 2025</h5>
@@ -492,17 +517,16 @@
                                         class="text-[#00ff9d] hover:text-[#00df89]"><i data-lucide="external-link"
                                             class="w-3 h-3"></i></a>
                                 </div>
-                                <p class="text-[10px] text-slate-400">Northern Mindanao Sector Pitching • Lead
-                                    Pitcher</p>
+                                <p class="text-[10px] text-slate-400">Northern Mindanao Sector Pitching • Lead Pitcher</p>
                             </div>
-                            <span class="text-xs font-mono text-slate-200 font-bold">3rd Place</span>
+                            <span class="text-xs font-mono text-slate-300 font-bold">3rd Place</span>
                         </div>
                     </div>
                 </div>
             </div>
 
             <footer
-                class="flex justify-between items-center w-full pt-4 border-t border-slate-900 text-xs text-slate-500 font-mono">
+                class="flex justify-between items-center w-full pt-4 border-t border-white/5 text-xs text-slate-500 font-mono">
                 <span>Joseph Noel Imasa</span>
                 <span>Biomedical Engineer</span>
             </footer>
@@ -569,7 +593,7 @@
                 cell.pulse += 0.02;
 
                 if (cell.x < 0 || cell.x > canvas.width) cell.vx *= -1;
-                if (cell.y < 0 || cell.y > canvas.width) cell.vy *= -1;
+                if (cell.y < 0 || cell.y > canvas.height) cell.vy *= -1;
 
                 const currentRadius = cell.radius + Math.sin(cell.pulse) * 0.8;
 
